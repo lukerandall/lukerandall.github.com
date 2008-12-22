@@ -1,0 +1,12 @@
+---
+layout: post
+title: My newest blog
+---
+
+h1. {{ page.title }}
+
+p(meta). 22 Dec 2008 - Johannesburg
+
+Well, I'm at it again - creating a new blog. I think my blog:posts ratio is close enough to 1:1 that the actual variance is negligible. It's shocking really. My last blog contained exactly 1 post, as did the one before it, etc. Plus to offset the few blogs that have contained multiple posts, I've created a few blogs that never even got their first post. For shame!
+
+Anyway, this is a shameless rip-off of "Mojombo's blog":http://mojombo.github.com, which he has happily invited us all to rip-off. I'm initially just interested in seeing my own name in Shiny letters on my GitHub page. I have high hopes of - in time - making this my own little creation. We'll see I suppose.
