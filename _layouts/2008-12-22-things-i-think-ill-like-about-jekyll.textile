@@ -1,0 +1,24 @@
+---
+layout: post
+title: Things I think I'll like about Jekyll
+---
+
+h1. {{ page.title }}
+
+p(meta). 22 Dec 2008 - Johannesburg
+
+Well, it's been all of ten minutes. No wait, maybe fifteen. Anyway, with that much exposure to it, this is a real first impressions type post. But here's what seems cool thus far.
+
+h2. Uses Git (and integrates with GitHub)
+
+I like the fact that I can edit blog posts from TextMate. I think a big reason for me never blogging is the fact that I have to think of going to my Wordpress site, logging into the admin section, and then composing a new entry. Now, this doesn't sound like much work (it really isn't), but I suppose I'm lazy, and so being able to do things from TextMate (which - on my machine - is open 95% of the time) makes the workflow just that little bit cleaner. Plus, I can push the changes out to GitHub with just a couple of keystrokes.
+
+Admittedly, this is not solely a Jekyll feature, since much of it's utility depends on GitHub... Still, I'm viewing Jekyll from the angle of GitHub pages, so I think it's a fair point.
+
+h2. You can hack on it. Easily
+
+The code for this blog is pretty much straight HTML or Textile, with maybe 2 loops (using Liquid) to display the list of blog posts. You can't get simpler than that.
+
+h2. And...?
+
+Okay, so that's only two points. But what more could you ask for in a blogging engine? Basically, the features TPW wanted it to have are really useful, and seem to be exactly what I need to start blogging more often. Time will tell I suppose.
