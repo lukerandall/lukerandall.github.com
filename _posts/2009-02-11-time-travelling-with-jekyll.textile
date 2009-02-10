@@ -1,0 +1,16 @@
+---
+layout: post
+title: Time travelling with Jekyll
+---
+
+h1. {{ page.title }}
+
+p(meta). 11 Feb 2009 - Johannesburg
+
+So I went ahead and changed the front page so that it showed my last couple of posts. I didn't like it though, so I changed it back. At the end of the day the whole thing is something of a hack since I just truncate the content of the post, which means that the HTML has a 99% chance of missing a closing p tag or something. Anyway, it works for now...
+
+One thing that I haven't figured out with Jekyll is how to have multiple entries from the same day appear in the correct order. I suppose I haven't really tried to figure it out. I suppose the obvious thing to do would be to add in a timestamp. I dunno if Jekyll supports anything but the date. So in the meantime I've just resorted to back dating and post dating entries if the order is important. Hence the title of this post...
+
+I was looking back at my old, abandoned blog (with all of two entries) and it struck me how quickly things move. I was busy blogging about Git and how I planned to look into GitHub. That was back in the days when you needed an invite to get onto GitHub. And that was less than a year ago. In less than a year GitHub has completely revolutionised open source, and more specifically Ruby, development.
+
+Anyway, I hadn't intended for this to be long. I'm hoping for once to get a decent night's rest.
