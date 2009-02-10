@@ -5,7 +5,7 @@ title: Someone reminded me to update my blog
 
 h1. {{ page.title }}
 
-p(meta). 09 Feb 2008 - Johannesburg
+p(meta). 09 Feb 2009 - Johannesburg
 
 
 Today, someone tweeted me and reminded me that my blog is one of the most shamefully neglected corners of cyberspace. Since I've never had anyone express interest in my blog before, I've never really felt too bad. But the fact that someone actually took notice means that I need to repent and become a more devout blogger.
