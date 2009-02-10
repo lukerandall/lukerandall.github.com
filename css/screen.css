@@ -153,9 +153,9 @@ ul.posts {
 }
 
  .more {
-   font-size: 60%;
-   float: right;
+   text-align: right;
    text-decoration: none;
+   margin-bottom: 2em;
  }
 
   /* standard */

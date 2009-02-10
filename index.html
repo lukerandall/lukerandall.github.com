@@ -5,16 +5,15 @@ title: Luke Randall
 
 <div id="home">
   
-  {% assign post = site.posts.first %}
-  {{ post.content | truncatewords: 60 }}
-  
-  <a href="{{ post.url }}" class="more">Read more...</a>
-  
-  <h1>Older Posts</h1>
+  {% for post in site.posts limit:1 %}
+    {{ post.content | truncatewords: 60 }}
+    <p class="more"><a href="{{ post.url }}" class="more">Read more...</a></p>
+  {% endfor %}
+
+  <h1>All Posts</h1>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 </div>
-  
