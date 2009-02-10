@@ -1,0 +1,11 @@
+---
+layout: post
+title: A few new additions
+---
+
+h1. {{ page.title }}
+
+p(meta). 10 Feb 2008 - Johannesburg
+
+
+Well, more like one new addition. Since I don't blog all that often, and I don't have anything else I'm linking to, I disliked the fact that my latest blog entry wasn't displayed on the home page. So, searching the net for a liquid cheat sheet (since I've never used it before), I hacked away at my index page for a few minutes and now have a truncated version of my newest post displayed on the home page. I'm thinking I'll probably do that for the last 3 - 5 posts, and then display links to the older ones, but I'll get to that soon enough.
