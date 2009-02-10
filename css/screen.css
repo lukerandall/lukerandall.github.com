@@ -152,6 +152,12 @@ ul.posts {
   
 }
 
+ .more {
+   font-size: 60%;
+   float: right;
+   text-decoration: none;
+ }
+
   /* standard */
   
   #post pre {
