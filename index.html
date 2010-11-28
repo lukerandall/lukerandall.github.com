@@ -4,7 +4,7 @@ title: Luke Randall
 ---
 
 <div id="home">
-  
+
   {% for post in site.posts limit:1 %}
     {{ post.content | truncatewords: 60 }}
     <p class="more"><a href="{{ post.url }}" class="more">Read more...</a></p>

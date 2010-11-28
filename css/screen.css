@@ -17,21 +17,31 @@ html, body {
 
 body {
   background-color: white;
-  font: 13.34px helvetica, arial, clean, sans-serif;
+  font: 13.34px "skolar-1","skolar-2";
   *font-size: small;
-  text-align: center;
+  text-align: left;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
+  font-weight: 700;
+  font-family: "skolar-1","skolar-2";
 }
 
 h1 {
   margin-bottom: 1em;
+  font-size: 24px;
+}
+
+h1 a {
+  color: #222;
+  text-decoration: none;
 }
 
 p {
   margin: 1em 0;
+  font-size: 15px;
+  color: #333;
 }
 
 a {
@@ -40,10 +50,6 @@ a {
 
 a:hover {
   color: black;
-}
-
-a:visited {
-  color: #a0a;
 }
 
 table {
@@ -68,8 +74,7 @@ ul.posts {
 
   ul.posts span {
     color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
+    font-family: "skolar-1","skolar-2";
   }
 
 /*****************************************************************************/
@@ -80,7 +85,6 @@ ul.posts {
 
 .site {
   font-size: 110%;
-  text-align: justify;
   width: 40em;
   margin: 3em auto 2em auto;
   line-height: 1.5em;
@@ -96,7 +100,7 @@ ul.posts {
     color: #a00;
     text-decoration: none;
   }
-  
+
   .site .title a:hover {
     color: black;
   }
@@ -106,13 +110,15 @@ ul.posts {
     text-decoration: none;
     margin-left: 1em;
   }
-  
+
   .site .title a.extra:hover {
     color: black;
   }
 
   .site .meta {
     color: #aaa;
+    font-family: "skolar-1","skolar-2";
+    font-style: italic;
   }
 
   .site .footer {
@@ -122,26 +128,31 @@ ul.posts {
     margin-top: 2em;
     overflow: hidden;
   }
-  
+
     .site .footer .contact {
       float: left;
       margin-right: 3em;
     }
-    
-      .site .footer .contact a {
+
+    .site .footer .other-sites {
+      float: right;
+      text-align: right;
+      margin-left: 3em;
+    }
+
+      .site .footer .contact a, .site .footer .other-sites a {
         color: #8085C1;
       }
-    
+
     .site .footer .rss {
-      margin-top: 1.1em;
-      margin-right: -.2em;
-      float: right;
+      margin: 1.1em 0 0 8em;
+      float: left;
     }
-    
+
       .site .footer .rss img {
         border: 0;
       }
-    
+
 /*****************************************************************************/
 /*
 /* Posts
@@ -149,7 +160,7 @@ ul.posts {
 /*****************************************************************************/
 
 #post {
-  
+
 }
 
  .more {
@@ -159,32 +170,34 @@ ul.posts {
  }
 
   /* standard */
-  
+
   #post pre {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 0 .4em;
   }
-  
+
   #post code {
     border: 1px solid #ddd;
     background-color: #eef;
     font-size: 95%;
     padding: 0 .2em;
+    font-family: Monaco, "Courier New", monospace;
   }
-  
+
     #post pre code {
       border: none;
     }
-    
+
   /* terminal */
-  
+
   #post pre.terminal {
     border: 1px solid black;
     background-color: #333;
     color: white;
+    font-family: Monaco, "Courier New", monospace;
   }
-  
+
   #post pre.terminal code {
     background-color: #333;
   }
