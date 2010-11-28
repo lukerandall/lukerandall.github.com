@@ -187,6 +187,10 @@ ul.posts {
     margin-top: -1em;
   }
 
+  p + h1, p + h2, p + h3 {
+    margin-top: 2.5em;
+  }
+
   #post p.meta + p {
     margin-top: 1.5em;
   }
