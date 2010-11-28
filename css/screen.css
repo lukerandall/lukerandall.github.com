@@ -141,6 +141,16 @@ ul.posts {
     overflow: hidden;
   }
 
+    .site .footer a {
+      color: #444;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .site .footer a:hover {
+      color: #000;
+    }
+
     .site .footer .contact {
       float: left;
       margin-right: 3em;
@@ -152,13 +162,9 @@ ul.posts {
       margin-left: 3em;
     }
 
-      .site .footer .contact a, .site .footer .other-sites a {
-        color: #8085C1;
-      }
-
     .site .footer .rss {
-      margin: 1.1em 0 0 8em;
-      float: left;
+      margin: 2em 0 0 0;
+      text-align: center;
     }
 
       .site .footer .rss img {
