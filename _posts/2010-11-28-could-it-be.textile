@@ -1,0 +1,22 @@
+---
+layout: post
+title: Could it be
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 28 Nov 2010 - Cape Town
+
+Lately I've been trying to learn a lot of new (at least for me) technologies and languages, and I've wanted a place to keep track of my thoughts and progress. So I've decided it makes sense for my to dust off the cobwebs and see if I can try make blogging stick. Time will tell.
+
+h2. What's new?
+
+I've changed things up a bit. Mostly by swapping out my dull sans serif font stack for Skolar. TypeKit is great, and I'm glad to finally have a site where I can use it.
+
+I've swapped out the most of the blue in the old style for red. It's a work in progress, but I think it's an improvement.
+
+h2. What I'll be writing about
+
+Lately I've finally taken it upon myself to improve my JavaScript. I'll be doing some pretty interesting things in the coming months.
+
+I'm also taking the time to learn more about functional programming, and in particular Haskell, so I'll probably have some very rudimentary posts about Haskell from time to time.
