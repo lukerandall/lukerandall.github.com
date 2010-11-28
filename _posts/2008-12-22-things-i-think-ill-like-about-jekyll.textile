@@ -3,7 +3,7 @@ layout: post
 title: Things I think I'll like about Jekyll
 ---
 
-h1. {{ page.title }}
+h1. "{{ page.title }}":{{ page.url }}
 
 p(meta). 22 Dec 2008 - Johannesburg
 

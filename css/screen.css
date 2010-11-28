@@ -29,7 +29,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  margin-bottom: 1em;
   font-size: 24px;
 }
 
@@ -63,6 +62,10 @@ table {
 /*
 /*****************************************************************************/
 
+h1 + ul {
+  margin-top: 1em;
+}
+
 ul.posts {
   list-style-type: none;
   margin-bottom: 2em;
@@ -75,6 +78,11 @@ ul.posts {
   ul.posts span {
     color: #aaa;
     font-family: "skolar-1","skolar-2";
+  }
+
+  ul.posts a {
+    color: #a00;
+    text-decoration: none;
   }
 
 /*****************************************************************************/
@@ -119,6 +127,10 @@ ul.posts {
     color: #aaa;
     font-family: "skolar-1","skolar-2";
     font-style: italic;
+  }
+
+  h1 + p.meta {
+    margin-top: 0;
   }
 
   .site .footer {
