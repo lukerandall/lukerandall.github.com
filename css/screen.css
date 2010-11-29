@@ -25,7 +25,6 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%;
   font-weight: 700;
-  font-family: "skolar-1","skolar-2";
 }
 
 h1 {
@@ -77,7 +76,6 @@ ul.posts {
 
   ul.posts span {
     color: #aaa;
-    font-family: "skolar-1","skolar-2";
   }
 
   ul.posts a {
@@ -100,7 +98,7 @@ ul.posts {
 
 .title {
   color: #a00;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 2em;
 }
 
@@ -125,7 +123,6 @@ ul.posts {
 
   .site .meta {
     color: #aaa;
-    font-family: "skolar-1","skolar-2";
     font-style: italic;
   }
 
