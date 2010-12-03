@@ -178,8 +178,13 @@ ul.posts {
 
 }
 
-  #post p {
+  #post p, #post ul {
     font-size: 16px;
+    color: #333;
+  }
+
+  #post ul {
+    padding: 2em 0 2em 2em;
   }
 
   #post p + p {
