@@ -1,0 +1,28 @@
+---
+layout: post
+title: Some rambling thoughts on type inference
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 02 Dec 2010 - Cape Town
+
+O'Reilly were having one of their site-wide ebook discounts, and as usual I scoured the very comprehensive list of books to see what I should buy. It's funny how something will suddenly become a necessity when you can get 60% off the purchase price. Needless to say I wound up buying "Programming Scala":http://programmingscala.com/, in spite of already owning a perfectly good - and unread - copy of "Programming in Scala":http://www.artima.com/shop/programming_in_scala. Admittedly, I did find the latter somewhat slow going, which has not helped in my efforts to try and learn the language.
+
+I've always (for the last 6 months at least!) considered my lack of knowledge of Scala to be an unfortunate shortcoming, and so I reasoned if I bought Just One More Book on it, I might read enough of it to learn a sufficent portion of the language to start enjoying it, allowing me to stick it out and learn further. It's frustrating to me how many programming books start out by detailing minutiae of a language instead of getting on with teaching us about it's style and strengths. I enjoy being given a complex, idiomatic piece of code in a language and having to figure out what it does, as well as identify the strange (or familiar) programming idioms. I find it fascinating to learn the different styles and patterns that become best practice in different languages.
+
+Anyway, as I started reading, I was wondering how Scala performs it's type inference. All the languages that perform type inference that I have a knowledge of use Hindley-Milner (or Damas-Milner to the pedantic), or some derivative of that. This is true of Haskell, ML, F#, etc.
+
+While searching for an answer, I came across "an article":http://www.codecommit.com/blog/scala/universal-type-inference-is-a-bad-thing which suggests that H-M type inference is a bad thing. It contrasts two equivalent pieces of code - written in ML and Scala - and posits that the Scala version is somehow superior to the ML version, precisely because it is more verbose. Okay, it's on the verbosity per se, but the type annotations necessitated by Scala performing only local type inference. Reading on, the author reasons that, due to the extensive use of type annotations in the Scala version, it is safer and more useful than the ML version. I must say, I find this argument to be rather absurd.
+
+In Haskell, I've found type inference to be hugely useful. It gives the code you write a feel more akin to dynamically typed languages than the verbose, boilerplate filled code one normally associates with statically typed languages. Letting the compiler figure out the types lets you focus on solving the problem, not babysitting the compiler.
+
+However, I have found it very useful when writing a function to start by thinking about its type signature. It accomplishes a number of things:
+
+* It forces you to formalise the problem in your head, and helps ensure your solution is actually solving the problem.
+* It gives you and others reading your code a succint explanation of what the code is doing.
+* It prevents errors of the sort the author complains about, where your function behaves differently to your expectations.
+
+I'm not sure if this just reflects a difference in culture between Haskell and ML, but I've found (from my admittedly limited experience with Haskell) that there is an emphasis on manually writing the type signature for all but the most basic functions, to ensure that your function isn't just internally consistent, but also consistent with your expectations of it. It provides numerous benefits, adds a single line of code above the function, and obviates the need for scattering ugly type annotations throughout your code.
+
+If, as the author says, there is a tendency in ML to only include the type signature when necessary, I can see why this might cause frustration. But, it seems to be a case of throwing out the baby with the bathwater when the problem can be solved quite simply, and not by "protecting" ourselves by using a dumbed down type inference algorithm.
