@@ -1,0 +1,26 @@
+---
+layout: post
+title: Haskell Again
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 21 April 2011 - Cape Town
+
+It struck me, as I started typing this page, that I don't move around nearly enough to warrant including a location in each blog post. Maybe once every few years when I move I can write "the next 5 years of blogging coming to you from _city name_" or something to that effect. Anyhow...  As usual, I realised I haven't blogged in ages. Like most blogs, mine seems to be a sort of metablog about blogging (or the absence thereof) rather than content. Perhaps this is the start of something more. Time will tell.
+
+As usual, I've spent the last year suffering from technology-induced ADD. This includes starting 2 books on Scala, a book on Clojure, one on Common Lisp, another on JavaScript, etc. I'd say the JavaScript one was most successful in that I actually read enough of it for it to have affected my understanding (and writing) of JavaScript. I've since realised that, as much as there are 100 different subjects that fascinate me, I'm never going to master any of them unless I'm willing to accept that I need to focus on one or two at a time.
+
+With that in mind, I've decided my primary focus - outside of whatever I'm doing at work, which will likely be a combination of Ruby and Objective-C - will be Haskell. I'm tired of having to resolve problems and rediscover things I've learnt before, so I'm going to try catalogue things as I learn them.
+
+h2. Starting today
+
+I watched some presentations given by [Nick Partridge](http://vimeo.com/user4351020/videos/sort:date) on Haskell, and learnt about or was reminded of a few things. Briefly:
+
+* Use [pointful](http://hackage.haskell.org/package/pointful) to help you make sense of complex point-free expressions.
+* Use [pointfree](http://hackage.haskell.org/package/pointfree) to turn pointful expressions into (complex, at times) pointfree expressions.
+* Use [hlint](http://community.haskell.org/~ndm/hlint/) on your source code for suggestions on how to improve it.
+* [Hoogle](http://www.haskell.org/hoogle/) can be installed locally.
+* First look in hackage for libraries that do what you are trying to accomplish before writing your own code.
+
+Those were the salient points for me. Now I'm off to try my hand at getting Yesod up and running.
