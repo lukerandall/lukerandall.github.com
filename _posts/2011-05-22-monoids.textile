@@ -1,0 +1,79 @@
+---
+layout: post
+title: Monoids
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 22 May 2011 - Cape Town
+
+In an effort to break the usual Haskell newbie cycle of writing another blog plost on monads, my inaugural Haskell themed blog post will be about *monoids*, which I've found to be surprisingly interesting.
+
+h2. What is a monoid?
+
+Simply put, a monoid is an algebraic type with an associative binary operation - ie an operation that has two operands - called mappend, and an identity element - an element that, when combined with another element using the aforementioned binary operation, leaves the element unchanged - called mempty. Disregarding the unfortunate choice of names, some examples might help to illustrate the concept:
+
+The natural numbers form a monoid under addition, with the binary operation obviously being addition, and the identity element 0. Likewise, they form a monoid under multiplication, with the identity element being 1. In both cases, the truthfulness of this can be trivially tested. Addition and multiplication both take two operands. Further adding 0 to any number returns that number; multiplying any number by 1 returns that number.
+
+h2. What's the point?
+
+With such simple examples, one might wonder what utility there is in creating a type class for monoids. In truth, I feel the power of monoids comes from the fact that they are 1. rather general, and 2. very simple. Since there is no limitation on the binary operation beyond that it be associative, many things can be represented as a monoid. Looking at the "Data.Monoid documentation":http://hackage.haskell.org/packages/archive/base/latest/doc/html/Data-Monoid.html one finds a number of monoid instances.
+
+h2. Folding with monoids
+
+To illustrate the utility of monoids, let's try using foldMap and a few monoid instances. For example, the Sum monoid can be used thusly:
+
+{% highlight haskell %}
+
+foldMap Sum []
+foldMap Sum [1,2,3]
+
+{% endhighlight %}
+
+which return respectively Sum 0 and Sum 6. "So what?", I hear you ask. Well, consider the situation where you want to compute the sum and the product of a list. No problem:
+
+{% highlight haskell %}
+
+foldMap (\x -> (Sum x, Product x)) [1..4]
+
+{% endhighlight %}
+
+which returns a tuple containing Sum 10 and Product 24. I suppose it would be more accurate to say it returns:
+
+{% highlight haskell %}
+
+(Sum {getSum = 10},Product {getProduct = 24})
+
+{% endhighlight %}
+
+The getSum and getProduct wrappers are because there can only exist one monoid instance per data type, so Sum and Product are newtype wrappers around Num.
+
+h2. I'm still not impressed
+
+Gosh, you really lack imagination, don't you? Anything that obeys our monoid laws can be made a monoid. For example, consider two functions with type signature Monoid b => a -> b. There exists a monoid for said functions, which means you can combine these two functions with mappend. What does this mean for you? As "cgibbard wonderfully demonstrates":http://www.reddit.com/r/programming/comments/7cf4r/monoids_in_my_programming_language/c06adnx - and indeed this is what first helped me to recognise the universal utility of monoids - using the Ordering data type, you can order a list using a variety of criteria simply and succinctly. To wit, Ordering forms a monoid under the following usage:
+
+{% highlight haskell %}
+
+LT `mappend` _ = LT
+GT `mappend` _ = GT
+EQ `mappend` x = x
+
+mempty = EQ
+
+{% endhighlight %}
+
+Suppose then that we have a list containing integers, and we wish to sort it first by the sum of the list, then by list length, then by ordinary numerical sorting of the elements, one can do the following:
+
+{% highlight haskell %}
+
+sortBy (comparing sum `mappend` comparing length `mappend` compare) [[1,2,3], [3,2,1], [6], [1,1,1,1,1,1], [7], [1,1,1,1]]
+
+{% endhighlight %}
+
+returning [[1,1,1,1],[6],[1,2,3],[3,2,1],[1,1,1,1,1,1],[7]]. As you can see, the list was sorted by sum, then length, then by comparison (hence [1,2,3] coming before [3,2,1]). Now consider how much code it would have taken to do this without using monoids.
+
+h2. You'd better be impressed
+
+Although these examples barely skim the surface of all you can do with monoids, I hope demonstrated how much simpler your code could be by recognising and using monoids appropriately. Since first learning about them, it's surprised me how this simple pattern appears in code I write *every single day*, and how often I could have written far simpler code if I had but recognised it for what it was - a simple, lowly monoid.
+
+
