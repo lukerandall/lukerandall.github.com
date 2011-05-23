@@ -15,12 +15,12 @@ With that in mind, I've decided my primary focus - outside of whatever I'm doing
 
 h2. Starting today
 
-I watched some presentations given by [Nick Partridge](http://vimeo.com/user4351020/videos/sort:date) on Haskell, and learnt about or was reminded of a few things. Briefly:
+I watched some presentations given by "Nick Partridge":http://vimeo.com/user4351020/videos/sort:date on Haskell, and learnt about or was reminded of a few things. Briefly:
 
-* Use [pointful](http://hackage.haskell.org/package/pointful) to help you make sense of complex point-free expressions.
-* Use [pointfree](http://hackage.haskell.org/package/pointfree) to turn pointful expressions into (complex, at times) pointfree expressions.
-* Use [hlint](http://community.haskell.org/~ndm/hlint/) on your source code for suggestions on how to improve it.
-* [Hoogle](http://www.haskell.org/hoogle/) can be installed locally.
+* Use "pointful":http://hackage.haskell.org/package/pointful to help you make sense of complex point-free expressions.
+* Use "pointfree":http://hackage.haskell.org/package/pointfree to turn pointful expressions into (complex, at times) pointfree expressions.
+* Use "hlint":http://community.haskell.org/~ndm/hlint/ on your source code for suggestions on how to improve it.
+* "Hoogle":http://www.haskell.org/hoogle/ can be installed locally.
 * First look in hackage for libraries that do what you are trying to accomplish before writing your own code.
 
 Those were the salient points for me. Now I'm off to try my hand at getting Yesod up and running.
