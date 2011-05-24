@@ -7,7 +7,7 @@ h1. "{{ page.title }}":{{ page.url }}
 
 p(meta). 22 May 2011 - Cape Town
 
-In an effort to break the usual Haskell newbie cycle of writing another blog plost on monads, my inaugural Haskell themed blog post will be about *monoids*, which I've found to be surprisingly interesting.
+In an effort to break the usual Haskell newbie cycle of writing another blog post on monads, my inaugural Haskell themed blog post will be about *monoids*, which I've found to be surprisingly interesting.
 
 h2. What is a monoid?
 
