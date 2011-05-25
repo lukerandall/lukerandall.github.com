@@ -78,9 +78,20 @@ ul.posts {
     color: #aaa;
   }
 
+  ul.posts span.detail {
+    display: inline-block;
+    width: 8em;
+    color: #777;
+  }
+
   ul.posts a {
     color: #a00;
     text-decoration: none;
+  }
+
+  ul.posts a.decorated:before {
+    padding: 0 3px;
+    content: "»";
   }
 
 /*****************************************************************************/
@@ -124,6 +135,7 @@ ul.posts {
   .site .meta {
     color: #aaa;
     font-style: italic;
+    font-size: 90%;
   }
 
   h1 + p.meta {
