@@ -1,0 +1,10 @@
+---
+layout: post
+title: Feedburner
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 26 May 2011 - Cape Town
+
+I've changed my Atom feed to use Feedburner, so for the 2 (hmm, that might be a generous total) of you following my blog, please point your feed reader at "http://feeds.feedburner.com/lukerandall":http://feeds.feedburner.com/lukerandall so that you can stay up to date. Thanks.
