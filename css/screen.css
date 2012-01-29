@@ -48,7 +48,7 @@ p {
 }
 
 a {
-  color: #a00;
+  color: #ff1493;
   padding: 2px 3px;
   margin-left: -3px;
   border-radius: 5px;
@@ -56,7 +56,7 @@ a {
 }
 
 a:hover {
-  color: black;
+  color: #9932cc;
   background: #f9f9f9;
 }
 
@@ -97,7 +97,6 @@ ul.posts {
   }
 
   ul.posts a {
-    color: #a00;
     text-decoration: none;
   }
 
@@ -120,13 +119,13 @@ ul.posts {
 }
 
 .title {
-  color: #a00;
+  color: #9932cc;
   font-weight: 700;
   margin-bottom: 2em;
 }
 
   .site .title a {
-    color: #a00;
+    color: #9932cc;
     text-decoration: none;
   }
 
@@ -237,7 +236,7 @@ ul.posts {
 
   #post pre {
     border: 1px solid #ddd;
-    background-color: #272822;
+    background-color: #f3f3f3;
     padding: 0 .4em;
   }
 
