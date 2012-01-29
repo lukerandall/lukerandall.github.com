@@ -237,13 +237,13 @@ ul.posts {
 
   #post pre {
     border: 1px solid #ddd;
-    background-color: #f3f3f3;
+    background-color: #272822;
     padding: 0 .4em;
   }
 
   #post code {
     border: 1px solid #ddd;
-    background-color: #f3f3f3;
+    background-color: #272822;
     font-size: 95%;
     padding: 0 .2em;
     font-family: "Courier New", monospace;
