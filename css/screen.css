@@ -23,6 +23,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "ff-nuvo-web-pro-1", "ff-nuvo-web-pro-2", sans-serif;
   font-size: 100%;
   font-weight: 700;
 }
@@ -36,6 +37,10 @@ h1 a {
   text-decoration: none;
 }
 
+h2 {
+  font-size: 19px;
+}
+
 p {
   margin: 1em 0;
   font-size: 15px;
@@ -44,10 +49,15 @@ p {
 
 a {
   color: #a00;
+  padding: 2px 3px;
+  margin-left: -3px;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
 a:hover {
   color: black;
+  background: #f9f9f9;
 }
 
 table {
@@ -82,6 +92,8 @@ ul.posts {
     display: inline-block;
     width: 8em;
     color: #777;
+    font-style: italic;
+    font-size: 12px;
   }
 
   ul.posts a {
@@ -132,7 +144,7 @@ ul.posts {
     color: black;
   }
 
-  .site .meta {
+  .site .meta, #post .meta {
     color: #aaa;
     font-style: italic;
     font-size: 90%;
@@ -225,16 +237,16 @@ ul.posts {
 
   #post pre {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: #f3f3f3;
     padding: 0 .4em;
   }
 
   #post code {
     border: 1px solid #ddd;
-    background-color: #eef;
+    background-color: #f3f3f3;
     font-size: 95%;
     padding: 0 .2em;
-    font-family: Monaco, "Courier New", monospace;
+    font-family: "Courier New", monospace;
   }
 
     #post pre code {
