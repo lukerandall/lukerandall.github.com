@@ -1,0 +1,10 @@
+---
+layout: post
+title: Rubyfuza Again
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 2 February 2012 - Cape Town
+
+Later today I'll be giving a talk at Rubyfuza. I'll be posting the slides when I'm done.
