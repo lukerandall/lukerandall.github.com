@@ -16,7 +16,7 @@ html, body {
 }
 
 body {
-  background-color: white;
+  background: #fff url("/images/background.png");
   font: 13.34px "skolar-1","skolar-2";
   *font-size: small;
   text-align: left;
@@ -57,7 +57,10 @@ a {
 
 a:hover {
   color: #9932cc;
-  background: #f9f9f9;
+  transition: background 0.75s;
+  -webkit-transition: background 0.75s;
+  -moz-transition: background 0.75s;
+  background: #f7f4f9;
 }
 
 table {
