@@ -9,7 +9,7 @@ p(meta). 3 February 2012 - Cape Town
 
 p. I gave a talk yesterday at "Rubyfuza":http://rubyfuza.org about Architecting Rails Applications. Primarily I spoke about how the focus on MVC alone has provided an insufficient level of abstraction, causing our models to become a dumping ground for application logic. Using "DCI":http://en.wikipedia.org/wiki/Data,_context_and_interaction allows us to decompose and manage this complexity. By turning the algorithm into a first-class object in our code, we can better reason about it, more easily test it, and encapsulate it. Like any design pattern, it's not always applicable, and won't solve every problem, but it is a useful tool. My slides won't be as meaningful without the talk, but here they are:
 
-<script src="http://speakerdeck.com/embed/4f2a83126a1774001f016ebc.js"></script>
+p. <script src="http://speakerdeck.com/embed/4f2a83126a1774001f016ebc.js"></script>
 
 p. I think an extra ten minutes would have been useful - there were certain things I had to hurry through to fit into the time slot and still have a couple minutes to answer questions. Chatting to "Nick Sutterer":http://nicksda.apotomo.de afterwards, he mentioned that he would have liked to see a bit more time spent discussing contexts specifically. I agree - for a concept that's so vital I didn't spend enough time examining it. That's something I will try rectify by exploring it in more detail here.
 

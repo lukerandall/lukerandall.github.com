@@ -118,7 +118,7 @@ ul.posts {
   font-size: 110%;
   width: 40em;
   margin: 3em auto 2em auto;
-  line-height: 1.5em;
+  line-height: 1.7em;
 }
 
 .title {
@@ -245,7 +245,6 @@ ul.posts {
 
   #post code {
     border: 1px solid #ddd;
-    background-color: #272822;
     font-size: 95%;
     padding: 0 .2em;
     font-family: "Courier New", monospace;
