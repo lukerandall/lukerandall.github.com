@@ -1,0 +1,21 @@
+---
+layout: post
+title: Architecting a Rails App
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 3 February 2012 - Cape Town
+
+p. I gave a talk yesterday at "Rubyfuza":http://rubyfuza.org about Architecting Rails Applications. Primarily I spoke about how the focus on MVC alone has provided an insufficient level of abstraction, causing our models to become a dumping ground for application logic. Using "DCI":http://en.wikipedia.org/wiki/Data,_context_and_interaction allows us to decompose and manage this complexity. By turning the algorithm into a first-class object in our code, we can better reason about it, more easily test it, and encapsulate it. Like any design pattern, it's not always applicable, and won't solve every problem, but it is a useful tool. My slides won't be as meaningful without the talk, but here they are:
+
+<script src="http://speakerdeck.com/embed/4f2a83126a1774001f016ebc.js"></script>
+
+p. I think an extra ten minutes would have been useful - there were certain things I had to hurry through to fit into the time slot and still have a couple minutes to answer questions. Chatting to "Nick Sutterer":http://nicksda.apotomo.de afterwards, he mentioned that he would have liked to see a bit more time spent discussing contexts specifically. I agree - for a concept that's so vital I didn't spend enough time examining it. That's something I will try rectify by exploring it in more detail here.
+
+p. After the conference was done for the day, "Sven Fuchs":http://svenfuchs.com and I chatted for a bit, and he raised (not for the first time) the issue of whether @#extend@ is too expensive to call during each request/response lifecycle. I was aware that it might be an issue with JRuby due to it clobbering the constants lookup cache (see "this blog post by Charles Nutter":http://blog.headius.com/2011/08/invokedynamic-in-jruby-constant-lookup.html for some details on why this is), and he said it was likely an issue with Rubinius as well. I don't know, and I think it's something worth investigating. I've seen some microbenchmarks on the matter, but I don't know how much faith one can put in them. It seems to me they benchmark the cost of calling @#extend@ itself, without taking into account the long term cost (ie across multiple requests).
+
+p. Two things strike me whilst writing this - firstly, it's possible (likely even) that for the average application the extra cost to lookup constants is not going to be what determines whether or not the system performs adequately, and secondly, there is nothing inherent in DCI that requires that we use @#extend@. The fact that DCI is happily used in statically typed languages would suggest that this is the case. There are various alternatives that have already occured to me, none of which I've thought through particularly well, and none of which I like, but nonetheless I think with further thought at least one idea would be found to be a workable solution. I'm interested to see what ideas others have on the matter.
+
+p. One thing that came up in the questions at the end of the talk was that someone (as I recall Sven) asked about the usage of @#call@ for the context. I was glad it was raised, as it's something I forgot to mention during the talk. I owe the insight (as I indeed owe "the code in question":http://mikepackdev.com/blog_posts/24-the-right-way-to-code-dci-in-ruby) to Mike Pack. He suggests @#call@ in lieu of @#execute@, @#run@ or the various other verbiage that others have suggested as it retains the same calling semantics were one to use a Proc instead of a class based approach to Contexts.
+
