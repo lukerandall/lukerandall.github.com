@@ -5,9 +5,11 @@ title: Luke Randall
 
 <div id="home">
 
-  {% for post in site.posts limit:1 %}
-    {{ post.content }}
-  {% endfor %}
+  <div id="post">
+    {% for post in site.posts limit:1 %}
+      {{ post.content }}
+    {% endfor %}
+  </div>
 
   <div class="contact-insert">
     Got something to say about what you've read?
