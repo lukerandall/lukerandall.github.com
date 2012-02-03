@@ -164,35 +164,43 @@ ul.posts {
     overflow: hidden;
   }
 
-    .site .footer a {
-      color: #444;
-      text-decoration: none;
-      font-size: 12px;
-    }
+  .site .contact-insert {
+    text-align: center;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin: 3em 0;
+    padding: 1.5em 0;
+  }
 
-    .site .footer a:hover {
-      color: #000;
-    }
+  .site .footer a {
+    color: #444;
+    text-decoration: none;
+    font-size: 12px;
+  }
 
-    .site .footer .contact {
-      float: left;
-      margin-right: 3em;
-    }
+  .site .footer a:hover {
+    color: #000;
+  }
 
-    .site .footer .other-sites {
-      float: right;
-      text-align: right;
-      margin-left: 3em;
-    }
+  .site .footer .contact {
+    float: left;
+    margin-right: 3em;
+  }
 
-    .site .footer .rss {
-      margin: 2em 0 0 0;
-      text-align: center;
-    }
+  .site .footer .other-sites {
+    float: right;
+    text-align: right;
+    margin-left: 3em;
+  }
 
-      .site .footer .rss img {
-        border: 0;
-      }
+  .site .footer .rss {
+    margin: 2em 0 0 0;
+    text-align: center;
+  }
+
+    .site .footer .rss img {
+      border: 0;
+    }
 
 /*****************************************************************************/
 /*
