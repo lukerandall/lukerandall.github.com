@@ -246,9 +246,10 @@ ul.posts {
   /* standard */
 
   #post pre {
-    border: 1px solid #ddd;
+    border: 1px solid #e9e9e9;
     background-color: #f3f3f3;
-    padding: 0 .4em;
+    border-radius: 5px;
+    padding: 0.4em 0.8em;
   }
 
   #post code {
