@@ -1,0 +1,51 @@
+---
+layout: post
+title: Implementing the reservoir algorithm in Haskell
+---
+
+h1. "{{ page.title }}":{{ page.url }}
+
+p(meta). 20 April 2012 - Cape Town
+
+I've been working on a small project lately, for which I've been using Haskell. Part of it entailed implementing Vitter's "Algorithm R (PDF)":http://www.cs.umd.edu/~samir/498/vitter.pdf for reservoir sampling. It's a simple enough algorithm: given a list with _n_ items (where _n_ is unknown), it allows us to randomly choose _k_ samples from this list.
+
+It works by utilizing a reservoir of randomly selected items of size _k_. Initially, we populate our reservoir with the first _k_ items from the list. Thereafter, with _k/i_ probability (where _i_ is the number of items we've seen) we replace an item in our reservoir. We do this by taking a random number _r_ between 1 and _i_, and if it falls between 1 and _k_ we replace the _r_ th element with the new item.
+
+If all of that still sounds complicated, it's only because I managed to complicate my explanation. The "wikipedia page":http://en.wikipedia.org/wiki/Reservoir_sampling has a nice pseudocode implementation which should make things clear.
+
+I found a number of existing Haskell implementations, but all of them seemed to rely on performing a single pass over the input data before returning the randomly selected elements. That's suitable for most use cases, but I need this to take a sample on an ongoing basis, where I can at any point retrieve the current samples, but still continue to add new ones. While this obviously isn't impossible with the implementations I found, it would require replicating the list (or array, etc.) of samples each time I added a new one, which is undesirable for performance reasons.
+
+h2. Implementation
+
+Knowing that for my use case I needed to take a relatively large number of samples I decided to use a mutable array as the container for the reservoir. This entails some trade-offs:
+
+h3. Pros
+
+* provides fast indexed lookup of elements (as opposed to O(n) lookup of lists)
+* does not require duplicating elements every time a change is made (as opposed to an immutable array)
+
+h3. Cons
+
+* lives in the IO monad
+* changes are destructive
+
+The cons are both related to not duplicating the data structure on updates: updating the array would have to require either duplicating it or mutating it. Whilst this should make sense logically, it is also confirmed by looking at the <code>array</code> source, which provides two functions for converting IArrays to MArrays, <code>thaw</code> and <code>unsafeThaw</code>. <code>thaw</code> copies the contents of the IArray to an MArray, whilst <code>unsafeThaw</code> provides mutable access to the array, either in-place or by copying the array's contents (it makes no guarantees about which).
+
+As an aside, another approach would be to use a <code>DiffArray</code>, which provides a pure - ostensibly immutable - interface but uses a mutable array under the surface. As updates are made to the array, they happen in-place and the changes required to return it to its prior state is recorded. This means that references to the old array return the old contents as expected, but at the cost of having to compute it by applying the list of changes needed to undo any updates that were made. However, since I had no need of this (*and* because the current <code>DiffArray</code> implementations performance is "horrible":http://trac.haskell.org/diffarray/ticket/2) I didn't try this approach.
+
+Since an update mutates the array, the only option was to put it in the IO monad. However, this led to complications in that parts of the data structure - the array of samples - were mutable, whilst the rest - current pool size and total sample count - weren't. This meant if you added a sample then referenced the original reservoir instead of the new reservoir it returned you would find the sample had been updated, but the size and count hadn't. This seemed pretty horrible to me: since the sample had been updated a casual examination of the reservoir would indicate that it had updated in place, and the average user could easily make the false assumption of thinking they didn't need to do anything with the return value of <code>addElem</code>. To rectify this, I decided to make <code>reservoirSize</code> an <code>IORef</code>, so that I could likewise update it in-place. This hopefully makes the behaviour more consistent for the user.
+
+h2. What's next
+
+At this point, the biggest thing I've gotten out of this is really the knowledge gained. The code itself will likely all be thrown away in the next few weeks (when I hope to have a bit of free time again). Future work will probably be:
+
+* measure performance
+* try using vectors
+* write some decent tests
+* make the code less likely to make people cry
+
+Right now I have no idea of the performance of the implementation. This means that for the reservoir sizes I'll be using, immutable data structures could prove to be fast enough, or conceivably even faster than the current structure with its use of <code>IORef</code>s and the like. An important first step then is writing benchmarks. With the new release of cabal and its support for benchmarking, this is a perfect chance to do it. Having benchhmarks also means writing an implementation using vectors will allow me to compare their performance instead of just going on the assumption that they should be faster. If this all seems obvious I suppose it's because it is.
+
+After that, I'll have a chance to finally use "QuickCheck":http://hackage.haskell.org/package/QuickCheck and write some tests. Assuming of course that I can figure out how to use it to test non-deterministic data structures.
+
+At the end of my hacking, it was satisfying to have implemented something in Haskell, but at the same time slightly disheartening for it to have taken so long to achieve such a basic task. I think it'll always be true that using languages you know well makes you more productive than using a new language, and I think that's especially so with something as different to what I'm used to as Haskell is. At least with this done I've gotten a few steps closer to making Haskell one of my productive languages.
